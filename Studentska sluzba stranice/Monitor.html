@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Monitor</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src='lib/angular.min.js'></script>
+	<script src='JS/MonitorApp.js'></script>
+</head>
+<body ng-app="MonitorApp">
+	<div ng-controller="MonitorCtrl">
+		<div class = "prvi_glavni">
+			<div class = "naziv_saltera_prvi">PRVI</div>
+			<div class = "naslov">Na redu:</div>
+			<div class = "na_redu_broj">{{odgovor.glavniRedovi[0].tekuciBroj}}</div>
+			<div class = "naslov">Preostalo:</div>
+			<div class = "br_preostalih">{{odgovor.glavniRedovi[0].brojLjudi}}</div>
+			<div class = "naslov">Pomoćni red:</div>
+			<div class = "pomocni">{{pomocni1}} </div>
+		</div>
+		<div class = "drugi_glavni">
+			<div class = "naziv_saltera_drugi">DRUGI</div>
+			<div class = "naslov">Na redu:</div>
+			<div class = "na_redu_broj">{{odgovor.glavniRedovi[1].tekuciBroj}}</div>
+			<div class = "naslov">Preostalo:</div>
+			<div class = "br_preostalih">{{odgovor.glavniRedovi[1].brojLjudi}}</div>
+			<div class = "naslov">Pomoćni red:</div>
+			<div class = "pomocni">{{pomocni2}} </div>
+		</div>
+		<div class = "treci_glavni">
+			<div class = "naziv_saltera_treci">TREĆI</div>
+			<div class = "naslov">Na redu:</div>
+			<div class = "na_redu_broj">{{odgovor.glavniRedovi[2].tekuciBroj}}</div>
+			<div class = "naslov">Preostalo:</div>
+			<div class = "br_preostalih">{{odgovor.glavniRedovi[2].brojLjudi}}</div>
+			<div class = "naslov">Pomoćni red:</div>
+			<div class = "pomocni">{{pomocni3}} </div>
+		</div>
+	</div>
+	<div class = "pomocni_red">
+	</div>
+</body>
+</html>

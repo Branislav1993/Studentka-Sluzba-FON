@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>QFON</title>
+	<meta charset="UTF-8">
+	<script src='lib/angular.min.js'></script>
+	<script src='JS/StudentApp.js'></script>
+</head>
+<body ng-app="app">
+	<div ng-controller="studCtrl">
+		<div id="demo">
+			<form name="prijavaForma" ng-submit="prijaviSe(prijavaForma.$valid)">
+				<input name = "indeksIn" id ="indeks" type="text" ng-model="ind" ng-pattern="/\b[0-9]{4}\b[/]\b20(0[0-9]|1[0-4])\b/" placeholder="unesi broj indeksa" required>
+				<select id="salter">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+				<div>{{porukaGreskeUspeha1}}</div>				
+				<input type="submit" value="Prijavi se!">
+			</form>
+			<form name="proveraForma" ng-submit="proveriIndeks(proveraForma.$valid)">
+				<input name="indeksPr" id ="indeks2" type="text" ng-model="ind2" ng-pattern="/\b[0-9]{4}\b[/]\b20(0[0-9]|1[0-4])\b/" placeholder="unesi broj indeksa" required>
+				<div>{{porukaGreskeUspeha2}}</div>					
+				<input type="submit" value="Proveri indeks!">
+			</form>
+			
+			<div>
+				Broj saltera: {{stanje[0].brojSalter}}
+				Tekuci broj: {{stanje[0].tekuciBroj}}
+				Broj ljudi: {{stanje[0].brojLjudi}}
+			</div>
+			<div>
+				Broj saltera: {{stanje[1].brojSalter}}
+				Tekuci broj: {{stanje[1].tekuciBroj}}
+				Broj ljudi: {{stanje[1].brojLjudi}}
+			</div>
+			<div>
+				Broj saltera: {{stanje[2].brojSalter}}
+				Tekuci broj: {{stanje[2].tekuciBroj}}
+				Broj ljudi: {{stanje[2].brojLjudi}}
+			</div>
+			<div>
+				ODGOVOR NA PRIJAVI SE
+				<div>salter: {{odgovor.brojSalter}} redni broj: {{odgovor.brojStudent}}</div>
+			</div>
+			<div>
+				ODGOVOR NA PROVERI INDEKS
+				<div ng-show="proveraForma.$valid">
+					<div>
+						Salter: {{provereno[0].brojSalter}}
+						Redni broj: {{provereno[0].brojStudent}}
+					</div>
+					<div>
+						Salter: {{provereno[1].brojSalter}}
+						Redni broj: {{provereno[1].brojStudent}}
+					</div>
+					<div>
+						Salter: {{provereno[2].brojSalter}}
+						Redni broj: {{provereno[2].brojStudent}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
